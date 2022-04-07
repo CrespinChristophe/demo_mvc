@@ -8,12 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-<!-- <h1>Produit d'id: <span th:text="${produit.id}}" >2</span></h1>-->
-<h1 th:text="| Produit d'id: ${produit.id} |"></h1><!-- les deux font la meme chose-->
-<h1 th:text="| Marque: ${produit.marque} |"></h1>
-<h1 th:text="| Modele: ${produit.modele} |"></h1>
-<h1 th:text="| Prix: ${produit.prix} |"></h1>
-<h1 th:text="| En vente: ${produit.enVente} |"></h1>
+<!-- <h1>Produit d'id: <span th:text="${produit.id}" >2</span></h1>-->
+
+<th:block th:oject="${produit}">
+<h1 th:text="| Id: *{id} |"></h1><!-- les deux font la meme chose-->
+<h1 th:text="| Marque: *{marque} |"></h1>
+<h1 th:text="| Modele: *{modele} |"></h1>
+<h1 th:text="| Prix: *{prix} |"></h1>
+<h1 th:text="| En vente: *{enVente} |"></h1>
+</th:block>
+
+<p><a href="/produit">retour</a></p>
 
 </body>
 </html>
